@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DateToWeek"
         mc:Ignorable="d"
-        Title="Resolver" Height="300" Width="300">
-    
+        FontFamily="Bahnschrift Light"
+        FontSize="13"
+        FontWeight="Bold"
+        Title="Resolver" Height="325" Width="300" Icon="/tirangle.png" Background="#FF545454" Foreground="White">
+
     <Border Padding="10">
         <StackPanel>
             <!-- Inserimento Manuale -->
@@ -27,19 +30,21 @@
                     <TextBlock Text="Settimana" Grid.Column="0" Grid.Row="0"/>
                     <TextBlock Text="Anno" Grid.Column="1" Grid.Row="0"/>
 
-                    <TextBox TextChanged="WeekTextBox_TextChanged" x:Name="WeekTextBox" Text="1" Grid.Column="0" Grid.Row="1" Margin="0 0 15 0" TextAlignment="Center" />
-                    <TextBox TextChanged="YearTextbox_TextChanged" x:Name="YearTextbox" Text="2000" Grid.Column="1" Grid.Row="1" TextAlignment="Center" />
+                    <TextBox InputScope="Number" TextChanged="WeekTextBox_TextChanged" x:Name="WeekTextBox" Text="1" Grid.Column="0" Grid.Row="1" Margin="0 0 15 0" TextAlignment="Center" />
+                    <TextBox InputScope="Number" TextChanged="YearTextbox_TextChanged" x:Name="YearTextbox" Text="2000" Grid.Column="1" Grid.Row="1" TextAlignment="Center" />
 
                     <TextBlock Text="Data" Grid.Column="0" Grid.Row="2" FontWeight="Bold" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="DateTextbox"  Text="01.01.0001" TextAlignment="Center" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"/>
-                    
+                    <TextBox x:Name="DateTextbox"  Text="01.01.0001" IsReadOnly="True" TextAlignment="Center" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1"/>
+                    <Button Click="Button_Click" Content="Copia" Grid.Column="1" Grid.Row="3" Background="#FFF24405" BorderBrush="#FFF2955E"/>
+
                 </Grid>
             </GroupBox>
 
             <!-- Inserimento Seriale -->
             <GroupBox Header="Inserimento Seriale">
-                <Grid>
+                <Grid Margin="3">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
@@ -48,16 +53,27 @@
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Codice seriale" Grid.Column="0" Grid.Row="0"/>
-                    <TextBox Grid.Column="0" Grid.Row="1" TextAlignment="Center"/>
+                    <TextBlock Margin="5" Text="Codice seriale" Grid.Column="0" Grid.Row="0"/>
+                    <TextBox MouseEnter="SerialTextbox_MouseEnter" x:Name="SerialTextbox" TextChanged="SerialTextbox_TextChanged" Grid.Column="0" Grid.Row="1" TextAlignment="Center"/>
+                    <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" IsChecked="True" Content="AI" Grid.Column="1" Grid.Row="1" ToolTip="Auto incolla\nIncolla automaticamente ciò che si è copiato prima."/>
 
-                    <TextBlock Text="Codice seriale elaborato" Grid.Column="0" Grid.Row="2" FontWeight="Bold"/>
-                    <TextBox Text="01.01.0001" TextAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                    <TextBlock Margin="5" Text="Codice seriale elaborato" Grid.Column="0" Grid.Row="2" FontWeight="Bold"/>
+                    <TextBox x:Name="SerialResultTextbox" Text="01.01.0001" IsReadOnly="True"  TextAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                    <Button Click="Button_Click_1" Content="Copia" Grid.Column="1" Grid.Row="3" Background="#FFF24405" BorderBrush="#FFF2955E"/>
+
+
+                    <TextBlock Margin="5" Text="Codice seriale alternativo" Grid.Column="0" Grid.Row="4" FontWeight="Bold"/>
+                    <TextBox x:Name="AlternativeSerialTextbox" Text="-" IsReadOnly="True"  TextAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+                    <Button Click="Button_Click_2" Content="Copia" Grid.Column="1" Grid.Row="5" Background="#FFF24405" BorderBrush="#FFF2955E"/>
 
                 </Grid>
             </GroupBox>
+
+            <TextBlock Text="Mariusz Arnold Bilda - mariusz.mab@gmail.com" FontSize="9" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Candara Light"></TextBlock>
         </StackPanel>
     </Border>
 </Window>

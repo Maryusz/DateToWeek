@@ -2,8 +2,35 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
+	<PublishTrimmed>true</PublishTrimmed>
+    <StartupObject></StartupObject>
+    <PackageId>Resolver</PackageId>
+    <Authors>Mariusz Arnold Bilda</Authors>
+    <Product>Resolver</Product>
+    <Copyright>Mariusz Arnold Bilda</Copyright>
+    <Description>Programma utile per il calcolo delle date da un numero di settimana e per l'elaborazione di alcuni tipi di seriali.</Description>
+    <PackageIcon>tirangle.png</PackageIcon>
+    <ApplicationIcon>tirangle.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="copy.png" />
+    <None Remove="tirangle.png" />
+    <None Include="Images\tirangle.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="copy.png" />
+    <Resource Include="tirangle.png" />
+  </ItemGroup>
 
 </Project>

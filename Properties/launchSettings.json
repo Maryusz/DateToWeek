@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "DateToWeek": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\39340\\Desktop\\DateToWeek",
+      "nativeDebugging": false
+    }
+  }
+}
