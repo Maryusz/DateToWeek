@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DateToWeek"
         mc:Ignorable="d"
-        FontFamily="Bahnschrift Light"
+        FontFamily="Segoe UI Light"
         FontSize="13"
         FontWeight="Bold"
-        Title="Resolver" Height="325" Width="300" Icon="/tirangle.png" Background="#FF545454" Foreground="White">
+        Title="Resolver" Height="325" Width="300" Icon="/tirangle.png" Background="#FF545454" Foreground="White" Topmost="True" FontStyle="Normal">
 
     <Border Padding="10">
         <StackPanel>
