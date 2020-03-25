@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:DateToWeek"
         mc:Ignorable="d"
         FontFamily="Segoe UI Light"
-        FontSize="13"
         FontWeight="Bold"
-        Title="Resolver" Height="325" Width="300" Icon="/tirangle.png" Background="#FF545454" Foreground="White" Topmost="True" FontStyle="Normal">
+        Title="Resolver" Height="330" Width="300" Icon="/tirangle.png" Background="#FF545454" Foreground="White" Topmost="True" FontStyle="Normal">
 
     <Border Padding="10">
         <StackPanel>
